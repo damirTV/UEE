@@ -1,0 +1,13 @@
+CREATE SCHEMA UEE;
+
+CREATE TABLE faculty (
+	id INT PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	cost DECIMAL(8,2) NOT NULL
+);
+
+CREATE TABLE course (
+	id INT PRIMARY KEY, 
+	number INT NOT NULL,
+	id_faculty INT REFERENCES faculty(id)
+);
