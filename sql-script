@@ -11,3 +11,12 @@ CREATE TABLE course (
 	number INT NOT NULL,
 	id_faculty INT REFERENCES faculty(id)
 );
+
+CREATE TABLE student (
+	id INT PRIMARY KEY, 
+	firstName VARCHAR(50) NOT NULL,
+	secondName VARCHAR(50) NOT NULL,
+	middleName VARCHAR(50) NOT NULL,
+	budget BOOLEAN NOT NULL, 
+	id_course INT REFERENCES course(id)
+);
