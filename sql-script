@@ -22,3 +22,9 @@ CREATE TABLE university.student (
 	budget BOOLEAN NOT NULL, 
 	id_course INTEGER REFERENCES university.course(id)
 );
+
+-- Создание факультетов
+INSERT INTO university.faculty (name, cost)
+VALUES ('Инженерный', 30000)
+INSERT INTO university.faculty (name, cost)
+VALUES ('Экономический', 49000)
