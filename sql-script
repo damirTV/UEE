@@ -1,24 +1,24 @@
 -- Создание схемы
-CREATE SCHEMA UEE;
+CREATE SCHEMA university;
 
 -- Создание таблиц
-CREATE TABLE UEE.faculty (
+CREATE TABLE university.faculty (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(50) NOT NULL,
 	cost DECIMAL(8,2) NOT NULL
 );
 
-CREATE TABLE UEE.course (
+CREATE TABLE university.course (
 	id SERIAL PRIMARY KEY, 
 	number INTEGER NOT NULL,
-	id_faculty INTEGER REFERENCES faculty(id)
+	id_faculty INTEGER REFERENCES university.faculty(id)
 );
 
-CREATE TABLE UEE.student (
+CREATE TABLE university.student (
 	id SERIAL PRIMARY KEY, 
 	firstName VARCHAR(50) NOT NULL,
 	secondName VARCHAR(50) NOT NULL,
 	middleName VARCHAR(50) NOT NULL,
 	budget BOOLEAN NOT NULL, 
-	id_course INTEGER REFERENCES course(id)
+	id_course INTEGER REFERENCES university.course(id)
 );
