@@ -55,3 +55,30 @@ VALUES ('Стоцкая', 'Ирина', 'Юрьевна', 3, false)
 
 INSERT INTO university.student (secondname, firstname, middlename, id_course, budget)
 VALUES ('Младич', 'Настасья', null, 3, false)	
+
+-- 1. Вывести всех студентов, кто платит больше 30_000.
+SELECT (firstname, secondname, middlename) FROM university.faculty fa
+	JOIN university.course co
+	ON fa.id = co.id_faculty
+	JOIN university.student st
+	ON co.id = st.id_course
+	WHERE cost > 30000 and budget = false
+
+-- 2. Перевести всех студентов Петровых на 1 курс экономического факультета.
+UPDATE university.student  SET id_course = 2
+WHERE secondname = 'Петров'
+
+-- 3. Вывести всех студентов без отчества или фамилии.
+SELECT * from university.student 
+WHERE middlename IS NULL OR secondname IS NULL
+
+-- 4. Вывести всех студентов содержащих в фамилии или в имени или в отчестве "ван".
+SELECT * from university.student 
+WHERE secondname LIKE '%ван%'
+OR firstname LIKE '%ван%'
+OR middlename LIKE '%ван%'
+
+-- 5. Удалить все записи из всех таблиц.
+DELETE FROM university.student
+DELETE FROM university.course
+DELETE FROM university.faculty
