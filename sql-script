@@ -39,3 +39,19 @@ VALUES (1, 2)
 
 INSERT INTO university.course (number, id_faculty)
 VALUES (4, 2)
+
+-- Создание учеников
+INSERT INTO university.student (secondname, firstname, middlename, id_course, budget)
+VALUES ('Петров', 'Петр', 'Петрович', 1, true)
+
+INSERT INTO university.student (secondname, firstname, middlename, id_course, budget)
+VALUES ('Иванов', 'Иван', 'Иванович', 1, false)	
+
+INSERT INTO university.student (secondname, firstname, middlename, id_course, budget)
+VALUES ('Михно', 'Иван', 'Иваныч', 3, true)
+
+INSERT INTO university.student (secondname, firstname, middlename, id_course, budget)
+VALUES ('Стоцкая', 'Ирина', 'Юрьевна', 3, false)
+
+INSERT INTO university.student (secondname, firstname, middlename, id_course, budget)
+VALUES ('Младич', 'Настасья', null, 3, false)	
