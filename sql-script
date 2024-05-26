@@ -26,5 +26,16 @@ CREATE TABLE university.student (
 -- Создание факультетов
 INSERT INTO university.faculty (name, cost)
 VALUES ('Инженерный', 30000)
+
 INSERT INTO university.faculty (name, cost)
 VALUES ('Экономический', 49000)
+
+-- Создание курсов
+INSERT INTO university.course (number, id_faculty)
+VALUES (1, 1)
+
+INSERT INTO university.course (number, id_faculty)
+VALUES (1, 2)
+
+INSERT INTO university.course (number, id_faculty)
+VALUES (4, 2)
